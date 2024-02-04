@@ -30,6 +30,8 @@ pipeline{
     
         stage("Checkout from SCM"){
             steps {
+		git reset --hard
+		git clean --fdx
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/thiruaws1lab/complete-prodcution-e2e-pipeline1'
             }
 
